@@ -1,0 +1,187 @@
+body {
+    background-color: #FFFAF5;
+}
+
+.logo {
+    margin-top: 1.875rem;
+    margin-left: 11rem;
+}
+
+.main {
+    display: flex;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 5.5rem;
+    width: 100%;
+    background-color: #FFFAF5;
+    z-index: 100;
+
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.panel {
+    margin-top: 2.5rem;
+    display: flex;
+    margin-left: 14.375rem;
+    gap: 1.25rem;
+}
+
+.panel p {
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+
+}
+
+.client {
+    margin-top: 1.875rem;
+    margin-left: 12.5rem;
+
+}
+
+.main-1 {
+    display: flex;
+}
+
+.main-book {
+    width: 35rem;
+    height: 25rem;
+    flex-shrink: 0;
+    margin-left: 14rem;
+    margin-top: 5rem;
+}
+
+.main-1 .left {
+    width: 20rem;
+    height: 15rem;
+    margin-left: 12rem;
+    margin-top: 9rem;
+}
+
+.left .one {
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%;
+}
+
+.left .two {
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+}
+
+.left button {
+    background: var(--2, #E16A00);
+    width: 10rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.left button p {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%;
+}
+
+
+
+.foot {
+    width: 100%;
+    height: 18rem;
+    background-color: #391F00;
+    display: flex;
+    margin-top: 621px;
+}
+
+.foot-logo {
+    margin-top: 5rem;
+    margin-left: 12rem;
+}
+
+.foot .right {
+    display: flex;
+}
+
+.foot .right .one,
+.foot .right .two,
+.foot .right .three {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    margin-top: 4rem;
+}
+
+.foot .right .one {
+    margin-left: 15rem;
+}
+
+.foot .right .two {
+    margin-left: 7rem;
+}
+
+.foot .right .three {
+    margin-left: 7rem;
+}
+
+.Aboutstore-container {
+    display: flex;
+    gap: 72px;
+    margin-top: 218px;
+ 
+
+}
+
+.Aboutstore-container h2 {
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%;
+    /* 70.627px */
+}
+
+.Aboutstore-container p {
+    display: flex;
+    width: 686px;
+    height: 253px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    /* 35.314px */
+}
+
+.Aboutstore{
+    margin-left: 120px;
+    margin-right: auto;
+    margin-top: 118px;
+}
