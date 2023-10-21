@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFAF5;
+}
+
+.container {
+    margin: 50px 31px 25px 215px;
+}
+
+.nav-menu {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-ul .list {
+    display: flex;
+    gap: 35px;
+}
+
+.list li {
+    list-style-type: none;
+}
+
+#search-li {
+    color: #E16A00;
+}
+
+.list a,
+.client p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: #241400;
+    text-transform: capitalize;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+}
+
+.client .joinus-logo {
+    margin-right: 5px;
+}
+
+.client p {
+    margin-right: 70px;
+}
+
+.main {
+    margin-top: 200px;
+    height: 600px;
+    display: flex;
+
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+    flex: 1;
+}
+
+.left-side #search-title {
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    color: #241400ca;
+}
+
+#search-book,
+#search-btn {
+    width: 500px;
+    font-size: 18px;
+    height: 55px;
+    border-radius: 8px;
+    border-color: transparent;
+}
+
+#search-book {
+    padding-left: 15px;
+    font-size: 20px;
+    border-color: #cecece;
+}
+
+#search-btn {
+    text-align: center;
+    background-color: #E16A00;
+    color: white;
+}
+
+.right-side {
+    flex: 1.5;
+}
+
+.right-side .carousel {
+    background-color: white;
+    width: 97%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.social-media {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+
+}
+
+.social-media .txt {
+    font-family: Montserrat, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 49px;
+    letter-spacing: 0em;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.links .link {
+    margin: 30px;
+}
+
+.foot {
+    margin-top: 100px;
+    width: 100%;
+    height: 18rem;
+    background-color: #391F00;
+    display: flex;
+    justify-content: center;
+}
+
+.foot-logo {
+    margin-top: 5rem;
+    margin-right: 100px;
+}
+
+.foot .right {
+    display: flex;
+    column-gap: 100px;
+}
+
+.foot .right .one,
+.foot .right .two,
+.foot .right .three,
+.foot .right .four {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    margin-top: 4rem;
+}
+
+#request {
+    margin-top: 15px;
+    color: #E16A00;
+    border: 1px solid #E16A00;
+    text-align: center;
+}
+
+#end-txt {
+    text-align: center;
+    color: white;
+    background-color: #391F00;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 2px;
+}
