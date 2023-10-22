@@ -92,5 +92,57 @@
     right: 0;
   }
 
+  .logo {
+    margin-top: 1.875rem;
+    margin-left: 11rem;
+}
+
+.main {
+    display: flex;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 5.5rem;
+    width: 100%;
+    background-color: #FFFAF5;
+    z-index: 100;
+
+}
+
+.joinus-logo {
+  cursor: pointer;
+}
+
+.client {
+  margin-top: 1.875rem;
+  margin-left: 12.5rem;
+
+}
+
+.panel {
+  margin-top: 2.5rem;
+  display: flex;
+  margin-left: 14.375rem;
+  gap: 1.25rem;
+}
  
+.panel ul {
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.panel ul li a {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+
+}
+.panel .two a{
+  text-decoration: underline;
+  color: #E16A00;
+}
    
