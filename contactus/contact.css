@@ -224,3 +224,25 @@ margin-top: 120px;
    margin-right: 30px;
    margin-bottom: 50px;
 }
+
+.panel ul {
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.panel ul li a {
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
+
+}
+.panel .four a{
+    text-decoration: underline;
+    color: #E16A00;
+}
