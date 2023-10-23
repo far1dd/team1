@@ -333,3 +333,11 @@ section {
     text-decoration: underline;
     color: #E16A00;
 }
+
+
+
+/* */
+
+.main-1 .left button {
+    cursor: pointer;
+}
