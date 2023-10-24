@@ -9,20 +9,30 @@ body {
 }
 
 .container {
-    margin: 50px 31px 25px 215px;
+    padding-top: 10px;
+    padding-left: 176px;
+}
+
+.logo {
+    margin-top: 1.875rem;
+
 }
 
 .nav-menu {
-    width: 100%;
-    height: 42px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 5.5rem;
+    width: 100%;
+    background-color: #FFFAF5;
+    position: fixed;
+    top: 0;
 }
 
 .nav-ul .list {
+    margin-top: 2.5rem;
     display: flex;
-    gap: 35px;
+    margin-left: 14.375rem;
+    gap: 1.02rem;
 }
 
 .list li {
@@ -33,29 +43,27 @@ body {
     color: #E16A00;
 }
 
-.list a,
-.client p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0em;
+.list a {
     text-decoration: none;
-    color: #241400;
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
     text-transform: capitalize;
 }
 
 .client {
-    display: flex;
-    align-items: center;
+    margin-top: 1.875rem;
+    margin-left: 12.5rem;
 }
 
 .client .joinus-logo {
     margin-right: 5px;
 }
 
-.client p {
-    margin-right: 70px;
-}
 
 .main {
     margin-top: 200px;
@@ -65,22 +73,25 @@ body {
 }
 
 .left-side {
-    display: flex;
-    flex-direction: column;
-    row-gap: 45px;
     flex: 1;
 }
-
+.left-side form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    
+}
 .left-side #search-title {
     font-size: 45px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
     color: #241400ca;
+    margin-bottom: 50px;
 }
 
 #search-book,
 #search-btn {
-    width: 500px;
+    width: 80%;
     font-size: 18px;
     height: 55px;
     border-radius: 8px;
@@ -120,7 +131,7 @@ body {
 
 .social-media .txt {
     font-family: Montserrat, sans-serif;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 900;
     line-height: 49px;
     letter-spacing: 0em;
@@ -136,7 +147,7 @@ body {
 }
 
 .foot {
-    margin-top: 100px;
+    margin-top: 0px;
     width: 100%;
     height: 18rem;
     background-color: #391F00;
