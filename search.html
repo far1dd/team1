@@ -6,16 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
     <link rel="stylesheet" href="search/search.css">
+   
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="search/search.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" />
-
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="nav-menu">
-            <div>
-                <img class="logo" src="./search/icon/Book.svg" alt="Book Icon">
+            <div class="logo">
+                <img src="./search/icon/Book.svg" alt="Book Icon">
             </div>
             <nav class="nav-ul">
                 <ul class="list">
@@ -30,20 +44,30 @@
             </nav>
             <div class="client">
                 <img class="joinus-logo" src="./search/icon/Profile.svg" alt="Profile Icon">
-                <p>join us</p>
             </div>
         </div>
 
         <div class="main">
             <section class="left-side">
-                <p id="search-title">Search</p>
-                <input type="text" placeholder="Order in Chaos" id="search-book">
-                <button id="search-btn">Search</button>
+                <form action="" id="inp-form">
+                    <p id="search-title">Search</p>
+                    <input type="text" placeholder="Order in Chaos" id="search-book">
+                    <button id="search-btn">Search</button>
+                </form>
             </section>
             <section class="right-side">
-                <div class="carousel">
+                <!-- ?Slider Swiper -->
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                    </div>
+                    <div class="swiper-button-prev">
 
+                    </div>
+                    <div class="swiper-button-next">
+
+                    </div>
                 </div>
+                <!-- ?Slider Swiper -->
             </section>
         </div>
         <div class="social-media">
@@ -51,7 +75,8 @@
             <div class="links">
                 <div class="link"><a href=""><img src="./search/icon/fb.svg" alt="Facebook" title="Facebook"></a></div>
                 <div class="link"><a href=""><img src="./search/icon/tv.svg" alt="Twitter" title="Twitter"></a></div>
-                <div class="link"><a href=""><img src="./search/icon/inst.svg" alt="Instagram" title="Instagram"></a></div>
+                <div class="link"><a href=""><img src="./search/icon/inst.svg" alt="Instagram" title="Instagram"></a>
+                </div>
             </div>
         </div>
     </div>
