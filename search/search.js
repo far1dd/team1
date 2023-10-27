@@ -4,7 +4,15 @@ const form = document.querySelector('#inp-form');
 const SLIDER = document.querySelector(".swiper-wrapper");
 const carusel = document.querySelector(".right-side");
 const swipper = document.querySelector('.swiper');
-
+const joinus = document.querySelector('.joinus-logo');
+const popup = document.querySelector('.popup');
+const closetab = document.querySelector('.popup #form #closePopup');
+joinus.addEventListener('click', function () {
+    popup.style.display = 'block'
+})
+closetab.addEventListener('click', function () {
+    popup.style.display = 'none'
+})
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const searchValue = inp.value.trim();
