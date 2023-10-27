@@ -402,3 +402,13 @@ section {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
 }
+
+#closePopup {
+    margin-left: 470px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
