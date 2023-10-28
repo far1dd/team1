@@ -9,7 +9,7 @@ document.querySelector('button').addEventListener('click', function () {
     localStorage.setItem("Kod1", "Ehed123");
 
     if (enteredUsername === localStorage.getItem("Ad1") && enteredPassword === localStorage.getItem("Kod1")) {
-        window.location.href = '/adminpanel/adminpanel.html';
+        window.location.href = './adminpanel/adminpanel.html';
         gizlip.style.display = "none";
     } else {
         input1.style.border = '2px solid red';
