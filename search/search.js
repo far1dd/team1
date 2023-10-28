@@ -4,15 +4,31 @@ const form = document.querySelector('#inp-form');
 const SLIDER = document.querySelector(".swiper-wrapper");
 const carusel = document.querySelector(".right-side");
 const swipper = document.querySelector('.swiper');
-const joinus = document.querySelector('.joinus-logo');
-const popup = document.querySelector('.popup');
-const closetab = document.querySelector('.popup #form #closePopup');
-joinus.addEventListener('click', function () {
+
+var popup = document.querySelector('.pop-up')
+var popupback = document.querySelector('.pop-up-back')
+var closepop = document.querySelector('#closePopup')
+var joinus = document.querySelector('.joinus-logo')
+var err = document.querySelector('.nav-menu')
+
+
+
+joinus.addEventListener('click', () => {
     popup.style.display = 'block'
+    popupback.style.display = 'block'
+    err.style.position = 'static'
+    
 })
-closetab.addEventListener('click', function () {
+
+closepop.addEventListener('click', () => {
     popup.style.display = 'none'
+    popupback.style.display = 'none'
+    err.style.position = 'fixed'
 })
+
+
+
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const searchValue = inp.value.trim();
