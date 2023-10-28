@@ -9,8 +9,12 @@ document.querySelector('button').addEventListener('click', function () {
     localStorage.setItem("Kod1", "Ehed123");
 
     if (enteredUsername === localStorage.getItem("Ad1") && enteredPassword === localStorage.getItem("Kod1")) {
-        window.location.href = 'http://127.0.0.1:5501/admin_page.html';
+        window.location.href = '/adminpanel/adminpanel.html';
         gizlip.style.display = "none";
+        input1.style.border = '2px solid green';
+        input2.style.border = '2px solid green';
+        document.querySelector('button').style.marginTop = "4.5px";
+        
     } else {
         input1.style.border = '2px solid red';
         input2.style.border = '2px solid red';

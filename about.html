@@ -19,7 +19,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="about/about.js" defer></script>
+    <link rel="stylesheet" href="catalog//footerOthers.css">
+     <script src="./about/firebase.js" defer type="module"></script>
+    <script src="./about/about.js" type="module" defer></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -44,43 +50,101 @@
     </header>
     <section class="Aboutstore">
     <div class="Aboutstore-container">
-        <div>
-            <h2>About Store</h2>
+        <!-- <div>
+            <h2 class="Basliq">About Store</h2>
             <p>We work without holidays and weekends! Residents of Kiev can receive an order on the day of its registration. Customers from other cities of Ukraine can receive an order within 1-5 days, depending on the location of the settlement and the selected delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the available methods, exact terms and cost of delivery during checkout in the order basket, after selecting the delivery city.
             </p>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <img src="./about/images/kitablar.svg" alt="">
-        </div>
+        </div> -->
+        
     </div>
 
     </section>
 
 
     <footer>
-        <div class="foot">
-            <div class="left">
-                <img class="foot-logo" src="./about/images/foot-logo.svg">
+        <div class="footer-above">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                        <h3>Follow us on social media</h3>
+                        <div class="icons">
+                            <div class="icon facebook">
+                                <img src="./catalog/images/iconface.png" alt="">
+                             </div>
+                             <div class="icon twitter">
+                                <img src="./catalog/images/icontwit.png" alt="">
+                             </div>
+                             <div class="icon instagram">
+                                <img src="./catalog/images/iconinsta.png" alt="">
+                             </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="right">
-                <div class="one">
-                    <p>Popular</p>
-                    <p>Programming</p>
-                    <p>Books for children</p>
-                    <p>Business</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img">
+                        <img src="./catalog/images/book.png" alt="">
+                    </div>
+                    <div class="logo">
+                        <div class="above">
+                           <h3>LIBRARY</h3> 
+                        </div>
+                        <hr>
+                        <div class="bottm">
+                            <p>BOOK STORE</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="two">
-                    <p>Cash</p>
-                    <p>Delivery</p>
-                    <p>Payment</p>
-                    <p>About the store</p>
+                <div class="col-md-6">
+                    <div class="sec popular">
+                        <h4>Popular</h4>
+                        <ul>
+                            <li>Programming</li>
+                            <li>Books for children</li>
+                            <li>Psychology</li>
+                            <li>Business</li>
+                        </ul>
+                    </div>
+                    <div class="sec cash">
+                        <h4>Information</h4>
+                        <ul>
+                            <li>Delivery</li>
+                            <li>Payment</li>
+                            <li>About the store</li>
+                        </ul>
+                    </div>
+                    <div class="sec help">
+                        <h4>Help</h4>
+                        <ul>
+                            <li>Contacts</li>
+                            <li>Purchase returns</li>
+                            <li>Buyer help</li>
+                        </ul>
+                    </div>
+                    <a href="#">Home</a>
+                    <a href="../pages/catalog.html">Catalog</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Search</a>
                 </div>
-                <div class="three">
-                    <p>Help</p>
-                    <p>Contacts</p>
-                    <p>Purchase returns</p>
-                    <p>Buyer help</p>
+                <div class="col-md-3" style="flex-direction: column;">
+                 <p class="nomre">+38(071)339-16-26</p>
+                 <button>Request call</button>
                 </div>
+                <div class="col-md-12">
+                    <hr>
+                    <p class="mainp">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+                    <p class="mobilp">Library BookStore EACamp </p>
+                    <p class="mobilp">© 2003-2021</p>
+                </div>
+            </div>
             </div>
         </div>
     </footer>

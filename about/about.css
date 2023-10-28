@@ -150,7 +150,7 @@ header {
     display: flex;
     gap: 72px;
     margin-top: 218px;
- 
+
 
 }
 
@@ -180,7 +180,7 @@ header {
     /* 35.314px */
 }
 
-.Aboutstore{
+.Aboutstore {
     margin-left: 120px;
     margin-right: auto;
     margin-top: 118px;
@@ -189,7 +189,7 @@ header {
 .panel ul {
     display: flex;
     gap: 1rem;
-    
+
 }
 
 .panel ul li a {
@@ -203,7 +203,9 @@ header {
     color: black;
 
 }
-.panel .three a{
+
+.panel .three a {
     text-decoration: underline;
     color: #E16A00;
 }
+

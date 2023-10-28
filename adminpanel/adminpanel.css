@@ -103,3 +103,71 @@
     font-size: 20px;
     display: none;
 }
+
+body {
+    background-color: #720418;
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.left-side {
+    background-color: #720418;
+    color: #FFF;
+    font-family: Montserrat;
+}
+
+.left-side .logo-login {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.left-side .library-txt {
+    border-bottom: 2px solid white;
+    padding-bottom: 6px;
+    width: 202px;
+}
+
+.left-side .library-txt2 {
+    font-size: 13px;
+}
+
+/* Styles for desktop screens */
+@media (min-width: 768px) {
+    .left-side {
+        width: 20%;
+        padding: 20px;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .rigth-side {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+    .left-side {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .rigth-side {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .left-side .all-catogories {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .left-side .all-catogories img {
+        width: 20px;
+        height: 20px;
+    }
+}
