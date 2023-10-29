@@ -1,0 +1,67 @@
+.section-js {
+    margin: 10rem 0 5rem;
+  }
+  
+  .section-js button {
+    color: #fff;
+    background-color: #e16a00;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 4.5rem;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  .main .main-section-right img {
+    width: 100%;
+    margin-right: 2rem;
+  }
+  .main .main-section-left {
+    width: 50%;
+  }
+  .main .main-section-left #bookPublishedDate {
+    color: #fff;
+    background-color: #2f80ed;
+    width: 69px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.2rem 0;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .main .main-section-left #bookName {
+    color: #241400;
+    font-size: 2rem;
+  }
+  .main .main-section-left #bookAuthor {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .main .main-section-left #bookDescription {
+    font-size: 0.9rem;
+    line-height: 196.187%;
+  }
+  .main .main-section-left button:hover {
+    transform: scale(1.1);
+  }
+  
+  @media all and (max-width: 1000px) {
+    .main {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .main .main-section-right img {
+      margin-bottom: 5rem;
+    }
+  }
+  

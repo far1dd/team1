@@ -74,22 +74,22 @@
     max-width: 85%;
     height: auto;
   }
-  .footer-bottom .container .row .col-md-3 .logo{
+  .footer-bottom .container .row .col-md-3 .logofo{
     margin-top: 10px;
   }
-  .footer-bottom .container .row .col-md-3 .logo .above h3{
+  .footer-bottom .container .row .col-md-3 .logofo .above h3{
     font-size: 14px;
     font-weight: 900;
     text-align: left;
   }
-  .footer-bottom .container .row .col-md-3 .logo hr{
+  .footer-bottom .container .row .col-md-3 .logofo hr{
     background: rgba(255, 255, 255, 0.59);
     width: 127px;
     height: 1px;
     margin-left: 7px;
     margin-top: -8px;
   }
-  .footer-bottom .container .row .col-md-3 .logo .bottm p{
+  .footer-bottom .container .row .col-md-3 .logofo .bottm p{
     font-size: 14px;
     font-weight: 400;
     margin-top: -17px;
