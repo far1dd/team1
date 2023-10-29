@@ -32,65 +32,293 @@
     text-decoration: none; 
     color: #333; 
     font-size: 15px;
+   }
+   .section-js {
+    background-color: #FFFAF5;
   }
-  /* Kartlar */
-  #catalog .container .row .slider {
+  .nav-tex {
+    margin-top: 5rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
+    justify-content: center;
+    align-items: center;
   }
- #catalog .container .row .slider .card {
-    border: none;
-    padding: 10px;
-    text-align: center;
-    background-color: #fff;
-    margin: 10px;
-    display: inline-block;
-    width: calc(30% - 20px); 
-    vertical-align: top;
-    box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1), 
-    -4px 0 6px rgba(0, 0, 0, 0.1), 
-    4px 0 6px rgba(0, 0, 0, 0.1), 
-    0 -4px 6px rgba(0, 0, 0, 0.1); 
-  }
-  #catalog .container .row .slider .card h3{
-    font-size: 16px;
-    font-weight: 700;
-    padding-top: 30px;
-  }
-  #catalog .container .row .slider .card p{
-    font-size: 13px;
-    font-weight: 400;
-  }
-  #catalog .container .row .slider .card button{
-    border-radius: 3px;
-    background: var(--2, #E16A00);
-    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
-    color: #FFF;
-    font-weight: 900;
-    font-size: 15px;
-    border:none;
-    padding: 5px;
-    width: 136px;
-  }
-  .arrow-prev,.arrow-next{
-    font-size: 40px;
-    font-weight: 200;
-    color:  #720418;
-    cursor: pointer;
-    position: absolute;
-  }
-  .arrow-prev {
-    left: 0;
+  .nav-tex-bestseller {
+    width: 86.5%;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  .arrow-next {
-    right: 0;
+  .section-js h1 {
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 190px;
+    line-height: 10rem;
+    cursor: pointer;
   }
+  
+  .nav-links {
+    width: 40%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: -150px;
+  }
+  
+  .nav-links p {
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%; 
+    transition: transform 0.3s ease;
+    margin-left: 70px;
+  }
+  
+  .main-swiper-container {
+    width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 128px;
+  }
+  
+  .slide-contect-container {
+    width: 25%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .book-img-container {
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  .book-img-container img {
+    padding-top: 24px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 47px;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .book-img-container img:hover {
+    transform: scale(1.1);
+  }
+  
+  .book-img-container p {
+    display: flex;
+    justify-content: center;
+    color: var(--, #241400);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .book-img-container p:hover {
+    transform: scale(1.1); 
+  }
+  
+  .book-img-container h4 {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    color: var(--, #241400);
+    font-family: Montserrat;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .book-img-container h4:hover {
+    transform: scale(1.1); 
+  }
+  
+  #all-books {
+    transition: 0.3s ease;
+  }
+  
+  #all-books:hover {
+    scale: 1.1;
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17px;
+  }
+  
+  .btn-container button {
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%; 
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background: var(--2, #e16a00);
+    box-shadow: 0px 3px 8px 0px rgba(225, 106, 0, 0.19);
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-container button:hover {
+    transform: scale(1.2); 
+  }
+  
+  .swiper-scrollbar-drag {
+    background: transparent;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: rgb(212, 126, 49);
+  }
+  
+  .swiper-button-prev img {
+    margin-right: 25px;
+  }
+  
+  .swiper-button-next img {
+    margin-left: 25px;
+  }
+  .logo {
+    margin-top: 1.875rem;
+    margin-left: 11rem;
+}
 
+.main {
+    display: flex;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    height: 5.5rem;
+    width: 100%;
+    background-color: #FFFAF5;
+    z-index: 100;
+
+}
+
+.joinus-logo {
+  cursor: pointer;
+}
+
+.client {
+  margin-top: 1.875rem;
+  margin-left: 12.5rem;
+
+}
+
+.panel {
+  margin-top: 2.5rem;
+  display: flex;
+  margin-left: 14.375rem;
+  gap: 1.25rem;
+}
  
+.panel ul {
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.panel ul li a {
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+
+}
+.panel .two a{
+  text-decoration: underline;
+  color: #E16A00;
+}
    
+.pop-up {
+  display: none;
+  width: 500px;
+  height: 350px;
+  border: 1px solid black;
+  position: absolute;
+  top: 30px;
+  left: 450px;
+  background: white ;
+  border: 0;
+  border-radius: 5px;
+}
+
+.pop-up .pop-up-title {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.pop-up .fullname {
+  width: 400px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.pop-up .email {
+  margin-left: 40px;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+}
+
+.pop-up .join-button {
+  width: 400px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #f27c14;
+  border: 0;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.pop-up-back {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+
+#closePopup {
+  margin-left: 470px;
+  font-size: 30px;
+  cursor: pointer;
+}
