@@ -402,7 +402,6 @@ var joinus = document.querySelector('.joinus-logo')
 joinus.addEventListener('click', () => {
     popup.style.display = 'block'
     popupback.style.display = 'block'
-    
 })
 
 closepop.addEventListener('click', () => {
