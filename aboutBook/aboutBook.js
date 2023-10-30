@@ -20,13 +20,3 @@ document.getElementById("goBackBtn").addEventListener("click", () => {
     window.location.href = "../catalog.html";
 });
 
-const hamburger = document.getElementById("checkbox");
-hamburger.addEventListener("click", () => {
-    if (hamburger.checked) {
-        mainRight.style.zIndex = "-1";
-        mainLeft.style.zIndex = "-1";
-    } else {
-        mainRight.style.zIndex = "0";
-        mainLeft.style.zIndex = "-1";
-    }
-});

@@ -27,8 +27,6 @@ closepop.addEventListener('click', () => {
 })
 
 
-
-
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const searchValue = inp.value.trim();

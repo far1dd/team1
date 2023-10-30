@@ -1,0 +1,54 @@
+/** @format */
+@media (max-width: 900px) {
+    .container .nav-container {
+      display: none;
+    }
+    .container .admin-panel-container {
+      width: 100%;
+      margin-left: 0;
+    }
+    .container .admin-panel-container .admin {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .container .admin-panel-container .admin .hamburger-menu {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .container .admin-panel-container .admin .response-none-container {
+      display: none;
+    }
+    .container .admin-panel-container .main-page {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .container .admin-panel-container .main-page .search-result-container {
+      width: 100%;
+    }
+    .container .table-responsive {
+      width: 100%;
+      overflow-x: scroll;
+    }
+    .container .table-books {
+      overflow-x: scroll;
+    }
+    .container .contact-us-resp {
+      overflow-x: scroll;
+    }
+  }
+  @media (max-width: 900px) {
+    .container .container-hamburger-menu {
+      width: 40%;
+    }
+  }
+  @media (max-width: 584px) {
+    .container .container-hamburger-menu {
+      width: 50%;
+    }
+  }
+  @media (max-width: 460px) {
+    .container .container-hamburger-menu {
+      width: 80%;
+    }
+  }/*# sourceMappingURL=responseAdminPanel.css.map */

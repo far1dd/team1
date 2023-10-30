@@ -1,105 +1,531 @@
-* {
-    background-color: #720418;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Montserrat:wght@400;500;600;700;900&family=Nunito+Sans:opsz@6..12&family=Preahvihear&family=Roboto:wght@300;400&family=Rubik:wght@400;500&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.login-logo-text {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-.library-txt {
-    border-bottom: 2px solid white;
-    padding-bottom: 6px;
-    width: 202px;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-.library-txt2 {
-    color: #FFF;
-    /* Текст в параграфах */
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    /* 25.504px */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
 }
 
-.logo-login {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-#registration-form {
-
-    width: 500px;
-    height: 400px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-#registration-form h1 {
-    margin-bottom: 20px;
-    color: #000;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    background-color: white;
-    width: 400px;
-    height: 81px;
-    margin-left: auto;
-    margin-right: auto;
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
-::placeholder {
-    color: #797667;
+img,
+picture {
+  max-width: 100%;
+}
 
-    font-family: Crimson Text;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-left: 20px;
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
   }
-
-#registration-form input {
-    width: 400px;
-    height: 50px;
-    border: 1px solid #CECECE;
-    background: #FFF;
-    margin-top: 14px;
-    color: #797667;
-    font-family: Crimson Text;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
 }
 
-#registration-form button {
-    border: 1px solid #CECECE;
-    background: #E16A00;
-    width: 410px;
-    height: 50px;
-    color: white;
-    flex-shrink: 0;
-    margin-top: 64.5px;
-    
+.header-container {
+  width: 92%;
+  margin: 1rem 6.5rem 0 6.5rem;
+}
 
-}.p-gizli{
-    background-color: white;
-    color: red;
-    font-size: 20px;
-    display: none;
+.wrapper {
+  width: 100%;
+}
+
+.main-container {
+  width: 88%;
+  margin: 0 6.5rem 0 6.5rem;
+}
+
+.container {
+  display: flex;
+}
+.container .nav-container {
+  background-color: #720418;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto; 
+}
+.container .logo-admin-img {
+  width: 100%;
+  margin: auto;
+  padding-top: 5.875rem;
+  padding-left: 2.17rem;
+  padding-right: 2.17rem;
+  margin-bottom: 0.5rem;
+}
+.container .nav-address {
+  width: 100%;
+  margin: 0 auto;
+}
+.container .nav-address .nav-links {
+  display: flex;
+  gap: 0.68rem;
+}
+.container .nav-address .nav-links li {
+  padding-bottom: 0.625rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.container .nav-address .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  transition: transform 0.3s ease;
+}
+.container .nav-address .nav-links li a:hover {
+  text-decoration: underline;
+  transform: scale(1.1); 
+}
+.container .admin-panel-container {
+  background-color: #fffaf5;
+  width: 80%;
+  margin-left: 20%; 
+  height: 100%;
+  overflow-y: auto; 
+}
+.container .admin-panel-container .admin {
+  margin-top: 3rem;
+  margin-right: 3.625rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+.container .admin-panel-container .admin .hamburger-menu {
+  display: none;
+}
+.container .admin-panel-container .admin .hamburger-menu .hamburger-button {
+  position: fixed;
+  top: 10px; 
+  right: 20px;
+}
+.container .admin-panel-container .admin .response-none-container {
+  display: flex;
+  align-items: center;
+}
+.container .admin-panel-container .admin img {
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.container .admin-panel-container .admin img:hover {
+  transform: scale(1.1); 
+}
+.container .admin-panel-container .admin a {
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.container .admin-panel-container .admin a:hover {
+  text-decoration: underline;
+  color: #ff8b00;
+  transform: scale(1.1); 
+}
+.container .admin-panel-container .main-page {
+  width: 87.3%;
+  margin-left: 2.06rem;
+}
+.container .admin-panel-container .main-page .add-book {
+  margin-bottom: 5.06rem;
+  padding-bottom: 0.625rem;
+}
+.container .admin-panel-container .main-page .add-book h4 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 1.625rem;
+}
+.container .admin-panel-container .main-page .add-book h5 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  margin-bottom: 0.375rem;
+}
+.container .admin-panel-container .main-page .search-input-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+}
+.container .admin-panel-container .main-page .search-input-btn input {
+  width: 24.68rem;
+  border-radius: 2.125rem;
+  padding-left: 2.06rem;
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+  margin-bottom: 0.375rem;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 0.87rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #797667;
+  border-radius: 2.125rem;
+  border: 0.125rem solid rgba(57, 31, 0, 0.48);
+  background: #fff;
+  outline: none;
+}
+.container .admin-panel-container .main-page .search-input-btn .btn-searcn {
+  border-radius: 2.125rem;
+  background-color: #ff8b00;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+  transition: transform 0.3s ease;
+  border: none;
+}
+.container .admin-panel-container .main-page .search-input-btn .btn-searcn:hover {
+  transform: scale(1.1); 
+}
+.container .admin-panel-container .main-page .search-result-container {
+  border-radius: 35px;
+  background: #f1f0f0;
+  width: 40%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 2.31rem;
+}
+.container .admin-panel-container .main-page .search-result-container .searc-result {
+  width: 90%;
+}
+.container .admin-panel-container .main-page .search-result-container .searc-result div {
+  display: flex;
+  gap: 1.5rem;
+}
+.container .admin-panel-container .main-page .search-result-container .searc-result div p {
+  color: #bcbcbc;
+  font-family: "Preahvihear", sans-serif;
+  font-size: 0.87rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container .book-form h5 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+}
+.container .book-form-contect {
+  border-radius: 20px;
+  background: #fff;
+  margin-bottom: 10.06rem;
+}
+.container .book-form-contect div {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.container .book-form-contect div h4 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container .book-form-contect div input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #030102;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  outline: none;
+}
+.container .book-form-contect .description input {
+  height: 4.5rem;
+}
+.container .book-form-contect button {
+  width: 100%;
+  border-radius: 0.625rem;
+  background: #ff8b00;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+.container .book-form-contect .btn-add {
+  transition: transform 0.3s ease;
+}
+.container .book-form-contect .btn-add:hover {
+  transform: scale(1.01); 
+}
+.container .add h4 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 1.625rem;
+}
+.container .add-contect {
+  border-radius: 20px;
+  background: #fff;
+  margin-bottom: 8.5rem;
+}
+.container .add-contect div {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.container .add-contect div h4 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #030102;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container .add-contect div input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #030102;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid #e2e6ee;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  outline: none;
+}
+.container .add-contect .description-about input {
+  height: 4.5rem;
+}
+.container .add-contect button {
+  width: 100%;
+  border-radius: 0.625rem;
+  background: #ff8b00;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1rem;
+}
+.container .add-contect .btn-about {
+  transition: transform 0.3s ease;
+}
+.container .add-contect .btn-about:hover {
+  transform: scale(1.01); 
+}
+.container .join-us h4 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 1.625rem;
+}
+.container .table-wrap {
+  width: 30%;
+  overflow-x: auto;
+}
+.container table,
+.container td,
+.container th {
+  text-align: center;
+  font-size: 16px;
+}
+.container table thead tr {
+  background-color: #720418;
+  color: #fff;
+}
+.container table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+.container table tbody tr td {
+  border: 1px solid #ddd;
+}
+.container th,
+.container td {
+  padding: 15px;
+  white-space: nowrap;
+}
+.container table tbody tr:nth-child(odd) {
+  background: rgba(180, 180, 180, 0.2588235294);
+  color: #000;
+}
+.container .box-wrap {
+  padding: 0px 16px;
+}
+.container table tbody tr td::last-child {
+  background-color: red;
+}
+.container .table-responsive {
+  width: 60%;
+}
+.container .book h4 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 1.625rem;
+}
+.container .contact-us h4 {
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 196.187%;
+  margin-bottom: 1.625rem;
+}
+
+.container .container-hamburger-menu {
+  display: none;
+  background-color: #720418;
+  width: 18%;
+  height: 100vh;
+  padding-top: 1.226rem;
+  position: fixed;
+  height: 100%;
+}
+
+.hamburger-nav {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 4.211rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hamburger-nav img {
+  cursor: pointer;
+}
+
+.home-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 0.43rem;
+}
+.home-nav-container a {
+  padding-bottom: 0.4rem;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 196.187%;
+  transition: transform 0.3s ease;
+}
+.home-nav-container a:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
 }

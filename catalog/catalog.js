@@ -1,3 +1,9 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+import { getDatabase,ref ,set,get,onValue,child,push} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
 
 const swiper = new Swiper(".swiper", {
     direction: "horizontal",
@@ -26,31 +32,24 @@ const swiper = new Swiper(".swiper", {
     },
 });
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import {
-    getDatabase,
-    ref,
-    get,
-    set,
-    onValue,
-    child,
-    push,
-} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+ 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCNtYmr6w74V6EI4IdfDK-4706tmJh7NQ8",
-    authDomain: "bookstore-7b3f2.firebaseapp.com",
-    databaseURL:
-    "https://bookstore-7b3f2-default-rtdb.firebaseio.com",
-    projectId:  "bookstore-7b3f2",
-    storageBucket:"bookstore-7b3f2.appspot.com",
-    messagingSenderId:  "727763460980",
-    appId:  "1:727763460980:web:40d144ac7f460d8baec221"
-};
+ // Your web app's Firebase configuration
+ // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+ const firebaseConfig = {
+   apiKey: "AIzaSyBWCS_9XxNuVRD8k57j8JWpx3O3bnXjtOk",
+   authDomain: "bookstore-ff9a6.firebaseapp.com",
+   projectId: "bookstore-ff9a6",
+   storageBucket: "bookstore-ff9a6.appspot.com",
+   messagingSenderId: "306854794591",
+   appId: "1:306854794591:web:c76aaec8b313e46af012ea",
+   measurementId: "G-3VJ8F778GH"
+ };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const bookDataRef = ref(db, `/bookData`);
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getDatabase(app);
+const bookDataRef = ref(analytics, `/bookData`);
 const allBooksContainer = document.querySelector(".wrapper-allbooks");
 const bestsellersContainer = document.querySelector(".wrapper-bestsellers");
 const newReleaseContainer = document.querySelector(".wrapper-newReleases");
@@ -59,6 +58,7 @@ const fictionBooks = [];
 const philosophyBooks = [];
 const biographyBooks = [];
 const dramaBooks = [];
+
 
 onValue(bookDataRef, (snapshot) => {
     const bookDatas = snapshot.val();
@@ -179,7 +179,6 @@ document.getElementById("all-books").addEventListener("click", () => {
             `#bookButton_${allBooks[i].id}`
         );
         allBooksID.forEach((element) => {
-            console.log("test");
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
                 window.localStorage.setItem("bookName", allBooks[i].name);
