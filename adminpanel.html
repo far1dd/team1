@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="adminpanel/assets/css/admin_page.css">
-
+    <link rel="stylesheet" href="/adminpanel/assets/css/admin_page.css">
+    <script src="/adminpanel/assets/js/adminpage.js" defer type="module"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto&display=swap"
         rel="stylesheet">
+        <script src="./assets/js/firebase.js" defer type="module"></script>
 </head>
 
 <body>
     <div class="left-side">
         <div class="logo-login">
             <div class="login-logo">
-                <img src="./adminpanel/assets/icon/iconlogin.svg" alt="">
+                <img src="/adminpanel/assets/icon/iconlogin.svg" alt="">
             </div>
             <div class="login-logo-text">
                 <p class="library-txt">LIBRARY</p>
@@ -28,28 +29,28 @@
 
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
             <a href="#">Home</a>
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
             <a href="#bookform">Books</a>
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
             <a href="#Aboutstore">About</a>
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
             <a href="#joinusnav">Join Us</a>
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
             <a href="#contactus">Contact</a>
         </div>
         <div class="all-catogories">
-            <img src="./adminpanel/assets/icon/minibook.svg" alt="">
-            <a href="adminpanel/assets/pages/admin.html">Logout</a>
+            <img src="/adminpanel/assets/icon/minibook.svg" alt="">
+            <a href="/adminpanel/assets/pages/admin.html">Logout</a>
         </div>
 
 
@@ -65,7 +66,7 @@
             <h2 class="searchbook-title">Search book</h2>
             <div class="buttonandinput flex">
                 <input type="text" class="search-text-input">
-                <button class="button_search"><img src="./adminpanel/assets/icon/search.svg" alt=""></button>
+                <button class="button_search"><img src="/adminpanel/assets/icon/search.svg" alt=""></button>
             </div>
         </div>
         <div class="Bookform" id="bookform">
@@ -75,7 +76,7 @@
                     <p>Book Name</p>
                     <div>
 
-                        <input type="text" placeholder="Angels">
+                        <input type="text" placeholder="Angels" id="BookName">
                     </div>
                 </div>
 
@@ -83,14 +84,14 @@
                     <p>Author Name</p>
                     <div>
 
-                        <input type="text" placeholder="Dan Brown">
+                        <input type="text" placeholder="Dan Brown" id="BookName">
                     </div>
                 </div>
                 <div class="bookform-div-prop">
                     <p>Book Image Url</p>
                     <div>
 
-                        <input type="text" placeholder="Alex Smith">
+                        <input type="text" placeholder="Alex Smith" id="ImgUrl">
                     </div>
                 </div>
                 <div class="bookform-div-prop">
@@ -98,7 +99,8 @@
                     <div>
 
                         <input type="text"
-                            placeholder="We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...">
+                            placeholder="We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+                            id="Description">
                     </div>
                 </div>
 
@@ -106,7 +108,7 @@
                     <p>Book Type</p>
                     <div>
 
-                        <input type="text" placeholder=" Fantastic">
+                        <input type="text" placeholder=" Fantastic" id="BookType">
                     </div>
                 </div>
 
@@ -123,7 +125,7 @@
                     <p>Title</p>
                     <div>
 
-                        <input type="text" placeholder="About Us">
+                        <input type="text" placeholder="About Us" id="AboutUs" class="AddTitle">
                     </div>
                 </div>
                 <div class="bookform-div-prop">
@@ -131,7 +133,7 @@
 
                     <div>
 
-                        <input type="text" placeholder="https://image:url/">
+                        <input type="text" placeholder="https://image:url/" class="AddTitle" id="Bookimage">
                     </div>
                 </div>
 
@@ -140,18 +142,19 @@
                     <div>
 
                         <input type="text"
-                            placeholder="  We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...">
+                            placeholder="  We work without holidays and weekends! Resident...We work without holidays and weekends! Resident...We work without holidays and weekends! Resident..."
+                            class="AddTitle" id="description">
                     </div>
                 </div>
 
-                <button class="add-button">About info add</button>
+                <button class="add-button aboutbutton-js aboutbutton" id="aboutbutton">About info add</button>
             </div>
             <div class="container">
 
 
                 <div class="table-responsive" id="joinusnav">
                     <h2 class="table-responsive-about">Join Us</h2>
-                    <table class="table">
+                    <table class="table" id="table">
                         <thead class="thead">
                             <tr>
                                 <th>#</th>
@@ -166,7 +169,7 @@
 
                 <div class="table-responsive table-responsive2" id="contactus">
                     <h2 class="table-responsive-about">Contact Us</h2>
-                    <table class="table">
+                    <table class="table" id="table">
                         <thead class="thead">
                             <tr>
                                 <th>#</th>
@@ -177,8 +180,11 @@
 
 
                             </tr>
+                            <tbody class="tbody" id="tbody">
+
+                            </tbody>
                         </thead>
-                        <tbody id="join-tbody"></tbody>
+                        <tbody id="tbody"></tbody>
                     </table>
                 </div>
             </div>

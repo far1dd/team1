@@ -20,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="contactus/contact.js" defer></script>
+    <script src="./contactus/contact-firbase.js" defer type="module"></script>
+    <script src="/contactus/firebase.js"></script>
 </head>
 
 <body>
@@ -42,30 +44,19 @@
             </div>
         </div>
     </header>
-
-    <div class="pop-up-back">
-        <div class="pop-up">
-            <span id="closePopup">&times;</span>
-            <p class="pop-up-title">Join us</p>
-            <input placeholder="Full Name" class="fullname"> <br>
-            <input placeholder="Email" class="email"> <br>
-            <button class="join-button">Join</button>
-        </div>
-    </div>
-
     <section class="contactus">
         <div class="contactheader"><p>Contact us</p></div>
         <form action="" class="inputs">
             <div>
-                <input class="ContactUsInputStandart" type="text" placeholder="Full Name">
-                <input class="ContactUsInputStandart" type="email" placeholder="Email">
+                <input class="ContactUsInputStandart" type="text" placeholder="Full Name" id="FullName">
+                <input class="ContactUsInputStandart" type="email" placeholder="Email" id="Email">
             </div>
 
             <div>
-                <input class="ContactUsInputStandart" type="text" placeholder="Address">
-                <input class="ContactUsInputStandart" type="number" placeholder="Phone number">
+                <input class="ContactUsInputStandart" type="text" placeholder="Address" id="Address">
+                <input class="ContactUsInputStandart" type="number" placeholder="Phone number" id="Number">
             </div>
-            <textarea name=""class="notesection" id="" cols="170" rows="10"></textarea>
+            <textarea name=""class="notesection" id="textarea" cols="170" rows="10"></textarea>
         </form>
         <button class="contactusSendinfo"> Send</button>
 
