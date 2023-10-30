@@ -1,76 +1,135 @@
-onValue(booksDataRef, (snapshot) => {
-    const bookData = snapshot.val();
-    const keys = Object.keys(bookData);
+// Import the necessary Firebase libraries
+import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+import { db } from "./firebase.js";
 
-    keys.map((key, index) => {
-        const bookName = bookData[key].name;
-        const bookDescription = bookData[key].description.slice(0, 40) + "...";
-        const bookCategory = bookData[key].type;
-        const bookAuthor = bookData[key].author;
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${(index += 1)}</td>
-          <td>${bookName}</td>
-          <td>${bookDescription}</td>
-          <td>${bookCategory}</td>
-          <td>${bookAuthor}</td>
-      `;
-        booksTableBody.append(tr);
-    });
+document.querySelector(".aboutbutton").addEventListener("click", function () {
+    function titleyolla(melumat) {
+        const x = ref(db, '/about/title')
+        set(x, melumat)
+
+    }
+
+    titleyolla(document.querySelector("#AboutUs").value)
+
+    function bookimage(melumat) {
+        const x = ref(db, '/about/bookimg')
+        set(x, melumat)
+
+    }
+
+    bookimage(document.querySelector("#Bookimage").value)
+
+    function description(melumat) {
+        const x = ref(db, '/about/descrp')
+        set(x, melumat)
+
+    }
+
+    description(document.querySelector("#description").value)
+}
+
+)
+
+
+
+const booksRef = ref(db, `/budaq1`);
+const tableBody = document.querySelector('#join-tbody')
+onValue(booksRef, (snapshot) => {
+
+    const bookData = snapshot.val();
+    const address = bookData.Address;
+    const email = bookData.Email;
+    const fullname = bookData.FullName;
+    const number = bookData.Number
+
+    // const table = document.createElement('table')
+    tableBody.innerHTML = `
+    <tr>
+        <th>1   </th>
+        <th>${address}</th>
+        <th>${email}</th>
+    </tr>
+`
+// tableBody.append(table)    
+        //     <table>
+        // </table>
+            
+
 });
 
-const apiKey = "AIzaSyDLQJBjL-y_fWchHg9pg3QliuW53W4eIEc";
-const searchBook = document.getElementById("search-book");
-const bookForm = document.getElementById("bookForm");
-const bookName = document.getElementById("book-name");
-const bookAuthor = document.getElementById("author-name");
-const bookImage = document.getElementById("book-image");
-const bookDescription = document.getElementById("description");
-const bookType = document.getElementById("book-type");
-let bookID;
-let bookSaleInfo;
-let bookPublishDate;
 
-const booksAPI = {
-    fillInputs: (e) => {
-        e.preventDefault();
-        fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=${searchBook.value}&key=${apiKey}`
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                const bookInfo = data.items;
+onValue(booksRef, (snapshot) => {
 
-                for (let i = 0; i < bookInfo.length; i++) {
-                    bookName.value = bookInfo[i].volumeInfo.title;
-                    bookAuthor.value = bookInfo[i].volumeInfo.authors;
-                    bookImage.value =
-                        bookInfo[i].volumeInfo.imageLinks.thumbnail;
-                    bookDescription.value = bookInfo[i].volumeInfo.description;
-                    bookType.value = bookInfo[i].volumeInfo.categories;
-                    bookID = bookInfo[i].id;
-                    bookSaleInfo = bookInfo[i].saleInfo.listPrice.amount;
-                    bookPublishDate = bookInfo[i].volumeInfo.publishedDate;
-                }
-            });
-    },
+    const bookData = snapshot.val();
+    const address = bookData.Address;
+    const email = bookData.Email;
+    const fullname = bookData.FullName;
+    const number = bookData.Number
 
-    sendData: (e) => {
-        e.preventDefault();
-        const bookData = {
-            name: bookName.value,
-            author: bookAuthor.value,
-            description: bookDescription.value,
-            image: bookImage.value,
-            type: bookType.value,
-            id: bookID,
-            saleInfo: bookSaleInfo,
-            publishedDate: bookPublishDate,
-        };
-        console.log(bookData.description);
+    // const table = document.createElement('table')
+    tableBody.innerHTML = `
+    <tr>
+        <th>1   </th>
+        <th>${fullname}</th>
+        <th>${email}</th>
+    </tr>
+`
+// tableBody.append(table)    
+        //     <table>
+        // </table>
+            
 
-        const newBookData = push(child(ref(db), `/bookData`)).key;
+});
 
-        set(ref(db, `/bookData/${newBookData}`), bookData);
-    },
-};
+
+const booksRef2 = ref(db, `/budaq1`);
+const tableBody2 = document.querySelector('#tbody')
+onValue(booksRef, (snapshot) => {
+
+    const bookData = snapshot.val();
+    const address = bookData.Address;
+    const email = bookData.Email;
+    const fullname = bookData.FullName;
+    const number = bookData.Number
+
+    // const table = document.createElement('table')
+    tableBody2.innerHTML = `
+    <tr>
+        <th>1   </th>
+        <th>${address}</th>
+        <th>${email}</th>
+    </tr>
+`
+// tableBody.append(table)    
+        //     <table>
+        // </table>
+            
+
+});
+
+
+onValue(booksRef2, (snapshot) => {
+
+    const bookData = snapshot.val();
+    const address = bookData.Address;
+    const email = bookData.Email;
+    const fullname = bookData.FullName;
+    const number = bookData.Number
+
+    // const table = document.createElement('table')
+    tableBody2.innerHTML = `
+    <tr>
+        <th>1   </th>
+        <th>${fullname}</th>
+        <th>${address}</th>
+        <th>${email}</th>
+        <th>${number}</th>
+        
+    </tr>
+`
+// tableBody.append(table)    
+        //     <table>
+        // </table>
+            
+
+});
