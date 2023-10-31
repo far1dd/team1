@@ -2,6 +2,41 @@
 import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 import { db } from "./firebase.js";
 
+//book form
+
+document.querySelector(".add-button").addEventListener("click",function(){
+    function bookName(data){
+        const d=ref(db,'/book/bookName');
+        set(d,data);
+    }
+    bookName(document.querySelector("#BookName").value);
+
+    function authorName(data){
+        const d=ref(db,'/book/authorName');
+        set(d,data);
+    }
+    authorName(document.querySelector("#AuthorName").value);
+
+    function imgUrl(data){
+        const d=ref(db,'/book/imgUrl');
+        set(d,data);
+    }
+    imgUrl(document.querySelector("#ImgUrl").value);
+
+    function description(data){
+        const d=ref(db,'/book/description');
+        set(d,data);
+    }
+    description(document.querySelector("#Description").value);
+
+    function bookType(data){
+        const d=ref(db,'/book/bookType');
+        set(d,data);
+    }
+    const a=bookType(document.querySelector("#BookType").value);
+
+})
+
 
 document.querySelector(".aboutbutton").addEventListener("click", function () {
     function titleyolla(melumat) {
@@ -138,38 +173,3 @@ onValue(booksRef2, (snapshot2) => {
 });
 
 
-
-//book form
-
-document.querySelector(".add-button").addEventListener("click",function(){
-    function bookName(data){
-        const d=ref(db,'/book/bookName');
-        set(d,data);
-    }
-    bookName(document.querySelector("#BookName").value);
-
-    function authorName(data){
-        const d=ref(db,'/book/authorName');
-        set(d,data);
-    }
-    authorName(document.querySelector("#AuthorName").value);
-
-    function imgUrl(data){
-        const d=ref(db,'/book/imgUrl');
-        set(d,data);
-    }
-    imgUrl(document.querySelector("#ImgUrl").value);
-
-    function description(data){
-        const d=ref(db,'/book/description');
-        set(d,data);
-    }
-    description(document.querySelector("#Description").value);
-
-    function bookType(data){
-        const d=ref(db,'/book/bookType');
-        set(d,data);
-    }
-    const a=bookType(document.querySelector("#BookType").value);
-
-})
