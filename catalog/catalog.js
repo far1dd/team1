@@ -1,3 +1,7 @@
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { ref, set, onValue,getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+import { db } from '../adminpanel/assets/js/firebase.js';
+
 
 const swiper = new Swiper(".swiper", {
     direction: "horizontal",
@@ -26,31 +30,10 @@ const swiper = new Swiper(".swiper", {
     },
 });
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import {
-    getDatabase,
-    ref,
-    get,
-    set,
-    onValue,
-    child,
-    push,
-} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCNtYmr6w74V6EI4IdfDK-4706tmJh7NQ8",
-    authDomain: "bookstore-7b3f2.firebaseapp.com",
-    databaseURL:
-    "https://bookstore-7b3f2-default-rtdb.firebaseio.com",
-    projectId:  "bookstore-7b3f2",
-    storageBucket:"bookstore-7b3f2.appspot.com",
-    messagingSenderId:  "727763460980",
-    appId:  "1:727763460980:web:40d144ac7f460d8baec221"
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const bookDataRef = ref(db, `/bookData`);
+
+const bookDataRef = ref(db, `/book`);
 const allBooksContainer = document.querySelector(".wrapper-allbooks");
 const bestsellersContainer = document.querySelector(".wrapper-bestsellers");
 const newReleaseContainer = document.querySelector(".wrapper-newReleases");
@@ -65,19 +48,19 @@ onValue(bookDataRef, (snapshot) => {
 
     for (const key in bookDatas) {
         allBooks.push(bookDatas[key]);
+
         const swiperSlideContainerForAllBooks = document.createElement("div");
         swiperSlideContainerForAllBooks.classList.add("swiper-slide");
-        swiperSlideContainerForAllBooks.classList.add(
-            "slide-contect-container"
-        );
+        swiperSlideContainerForAllBooks.classList.add("slide-contect-container");
         swiperSlideContainerForAllBooks.classList.add("all-books-container");
+        swiperSlideContainerForAllBooks.innerHTML = ""
         swiperSlideContainerForAllBooks.innerHTML = `
             <div class='book-img-container'>
-                <img src="${bookDatas[key].image}" />
-                <h4>${bookDatas[key].name}</h4>
-                <p>${bookDatas[key].author}</p>
+                <img src="${bookDatas.imgUrl}" />
+                <h4>${bookDatas.bookName}</h4>
+                <p>${bookDatas.authorName}</p>
                 <div class="btn-container">
-                <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                    <button id="bookButton_${bookDatas[key].id}">Read more</button>
                 </div>
             </div>
         `;
@@ -89,15 +72,15 @@ onValue(bookDataRef, (snapshot) => {
             swiperSlideContainer.classList.add("swiper-slide");
             swiperSlideContainer.classList.add("slide-contect-container");
             swiperSlideContainer.innerHTML = `
-            <div class='book-img-container'>
-                <img src="${bookDatas[key].image}" />
-                <h4>${bookDatas[key].name}</h4>
-                <p>${bookDatas[key].author}</p>
-                <div class="btn-container">
-                <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                <div class='book-img-container'>
+                    <img src="${bookDatas[key].imgUrl}" />
+                    <h4>${bookDatas[key].bookName}</h4>
+                    <p>${bookDatas[key].authorName}</p>
+                    <div class="btn-container">
+                        <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
 
             bestsellersContainer.append(swiperSlideContainer);
         }
@@ -107,15 +90,15 @@ onValue(bookDataRef, (snapshot) => {
             swiperSlideContainer.classList.add("swiper-slide");
             swiperSlideContainer.classList.add("slide-contect-container");
             swiperSlideContainer.innerHTML = `
-            <div class='book-img-container'>
-                <img src="${bookDatas[key].image}" />
-                <h4>${bookDatas[key].name}</h4>
-                <p>${bookDatas[key].author}</p>
-                <div class="btn-container">
-                <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                <div class='book-img-container'>
+                    <img src="${bookDatas[key].imgUrl}" />
+                    <h4>${bookDatas[key].bookName}</h4>
+                    <p>${bookDatas[key].authorName}</p>
+                    <div class="btn-container">
+                        <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
             newReleaseContainer.append(swiperSlideContainer);
         }
 
@@ -128,30 +111,25 @@ onValue(bookDataRef, (snapshot) => {
         } else if (bookDatas[key].type === "Philosophy") {
             philosophyBooks.push(bookDatas[key]);
         }
-        const buttons = document.querySelectorAll(
-            `#bookButton_${bookDatas[key].id}`
-        );
+
+        const buttons = document.querySelectorAll(`#bookButton_${bookDatas[key].id}`);
         buttons.forEach((element) => {
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
-                window.localStorage.setItem("bookName", bookDatas[key].name);
-                window.localStorage.setItem(
-                    "bookDescription",
-                    bookDatas[key].description
-                );
-                window.localStorage.setItem(
-                    "bookAuthor",
-                    bookDatas[key].author
-                );
-                window.localStorage.setItem("bookImage", bookDatas[key].image);
-                window.localStorage.setItem(
-                    "bookPublishedData",
-                    bookDatas[key].publishedDate.slice(0, 4)
-                );
+                window.localStorage.setItem("bookName", bookDatas[key].bookName);
+                window.localStorage.setItem("bookDescription", bookDatas[key].description);
+                window.localStorage.setItem("bookAuthor", bookDatas[key].authorName);
+                window.localStorage.setItem("bookImage", bookDatas[key].imgUrl);
+                window.localStorage.setItem("bookPublishedData", bookDatas[key].publishedDate.slice(0, 4));
             });
         });
     }
 });
+
+
+
+
+
 document.getElementById("all-books").addEventListener("click", () => {
     const swiperCont = document.querySelectorAll(".all-books-container");
     swiperCont.forEach((element) => {
@@ -164,9 +142,9 @@ document.getElementById("all-books").addEventListener("click", () => {
         swiperSlide.classList.add("all-books-container");
         swiperSlide.innerHTML = `
             <div class='book-img-container'>
-            <img src="${allBooks[i].image}" />
-            <h4>${allBooks[i].name}</h4>
-            <p>${allBooks[i].author}</p>
+            <img src="${allBooks[i].imgUrl}" />
+            <h4>${allBooks[i].bookName}</h4>
+            <p>${allBooks[i].authorName}</p>
             <div class="btn-container">
                 <button id="bookButton_${allBooks[i].id}">Read more</button>
             </div>
@@ -182,13 +160,13 @@ document.getElementById("all-books").addEventListener("click", () => {
             console.log("test");
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
-                window.localStorage.setItem("bookName", allBooks[i].name);
+                window.localStorage.setItem("bookName", allBooks[i].bookName);
                 window.localStorage.setItem(
                     "bookDescription",
                     allBooks[i].description
                 );
-                window.localStorage.setItem("bookAuthor", allBooks[i].author);
-                window.localStorage.setItem("bookImage", allBooks[i].image);
+                window.localStorage.setItem("bookAuthor", allBooks[i].authorName);
+                window.localStorage.setItem("bookImage", allBooks[i].imgUrl);
                 window.localStorage.setItem(
                     "bookPublishedData",
                     allBooks[i].publishedDate.slice(0, 4)
@@ -210,9 +188,9 @@ document.querySelector("#fiction").addEventListener("click", () => {
         swiperSlide.classList.add("all-books-container");
         swiperSlide.innerHTML = `   
             <div class='book-img-container'>
-            <img src="${fictionBooks[i].image}" />
-            <h4>${fictionBooks[i].name}</h4>
-            <p>${fictionBooks[i].author}</p>
+            <img src="${fictionBooks[i].imgUrl}" />
+            <h4>${fictionBooks[i].bookName}</h4>
+            <p>${fictionBooks[i].authorName}</p>
             <div class="btn-container">
                 <button id="bookButton_${fictionBooks[i].id}">Read more</button>
             </div>
@@ -226,16 +204,16 @@ document.querySelector("#fiction").addEventListener("click", () => {
         fictionBooksID.forEach((element) => {
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
-                window.localStorage.setItem("bookName", fictionBooks[i].name);
+                window.localStorage.setItem("bookName", fictionBooks[i].bookName);
                 window.localStorage.setItem(
                     "bookDescription",
                     fictionBooks[i].description
                 );
                 window.localStorage.setItem(
                     "bookAuthor",
-                    fictionBooks[i].author
+                    fictionBooks[i].authorName
                 );
-                window.localStorage.setItem("bookImage", fictionBooks[i].image);
+                window.localStorage.setItem("bookImage", fictionBooks[i].imgUrl);
                 window.localStorage.setItem(
                     "bookPublishedData",
                     fictionBooks[i].publishedDate.slice(0, 4)
@@ -257,9 +235,9 @@ document.querySelector("#philosophy").addEventListener("click", () => {
         swiperSlide.classList.add("all-books-container");
         swiperSlide.innerHTML = `   
             <div class='book-img-container'>
-            <img src="${philosophyBooks[i].image}" />
-            <h4>${philosophyBooks[i].name}</h4>
-            <p>${philosophyBooks[i].author}</p>
+            <img src="${philosophyBooks[i].imgUrl}" />
+            <h4>${philosophyBooks[i].bookName}</h4>
+            <p>${philosophyBooks[i].authorName}</p>
             <div class="btn-container">
             <button id="bookButton_${philosophyBooks[i].id}">Read more</button>
             </div>
@@ -276,7 +254,7 @@ document.querySelector("#philosophy").addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
                 window.localStorage.setItem(
                     "bookName",
-                    philosophyBooks[i].name
+                    philosophyBooks[i].bookName
                 );
                 window.localStorage.setItem(
                     "bookDescription",
@@ -284,11 +262,11 @@ document.querySelector("#philosophy").addEventListener("click", () => {
                 );
                 window.localStorage.setItem(
                     "bookAuthor",
-                    philosophyBooks[i].author
+                    philosophyBooks[i].authorName
                 );
                 window.localStorage.setItem(
                     "bookImage",
-                    philosophyBooks[i].image
+                    philosophyBooks[i].imgUrl
                 );
                 window.localStorage.setItem(
                     "bookPublishedData",
@@ -311,9 +289,9 @@ document.getElementById("drama").addEventListener("click", () => {
         swiperSlide.classList.add("all-books-container");
         swiperSlide.innerHTML = `
             <div class='book-img-container'>
-            <img src="${dramaBooks[i].image}" />
-            <h4>${dramaBooks[i].name}</h4>
-            <p>${dramaBooks[i].author}</p>
+            <img src="${dramaBooks[i].imgUrl}" />
+            <h4>${dramaBooks[i].bookName}</h4>
+            <p>${dramaBooks[i].authorName}</p>
             <div class="btn-container">
             <button id="bookButton_${dramaBooks[i].id}">Read more</button>
             </div>
@@ -327,13 +305,13 @@ document.getElementById("drama").addEventListener("click", () => {
         dramaBooksID.forEach((element) => {
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
-                window.localStorage.setItem("bookName", dramaBooks[i].name);
+                window.localStorage.setItem("bookName", dramaBooks[i].bookName);
                 window.localStorage.setItem(
                     "bookDescription",
                     dramaBooks[i].description
                 );
-                window.localStorage.setItem("bookAuthor", dramaBooks[i].author);
-                window.localStorage.setItem("bookImage", dramaBooks[i].image);
+                window.localStorage.setItem("bookAuthor", dramaBooks[i].authorName);
+                window.localStorage.setItem("bookImage", dramaBooks[i].imgUrl);
                 window.localStorage.setItem(
                     "bookPublishedData",
                     dramaBooks[i].publishedDate.slice(0, 4)
@@ -354,9 +332,9 @@ document.getElementById("biography").addEventListener("click", () => {
         swiperSlide.classList.add("all-books-container");
         swiperSlide.innerHTML = `
             <div class='book-img-container'>
-            <img src="${biographyBooks[i].image}" />
-            <h4>${biographyBooks[i].name}</h4>
-            <p>${biographyBooks[i].author}</p>
+            <img src="${biographyBooks[i].imgUrl}" />
+            <h4>${biographyBooks[i].bookName}</h4>
+            <p>${biographyBooks[i].authorName}</p>
             <div class="btn-container">
             <button id="bookButton_${biographyBooks[i].id}">Read more</button>
             </div>
@@ -371,18 +349,18 @@ document.getElementById("biography").addEventListener("click", () => {
         biographyBooksID.forEach((element) => {
             element.addEventListener("click", () => {
                 window.location.href = "/aboutBook/aboutBook.html";
-                window.localStorage.setItem("bookName", biographyBooks[i].name);
+                window.localStorage.setItem("bookName", biographyBooks[i].bookName);
                 window.localStorage.setItem(
                     "bookDescription",
                     biographyBooks[i].description
                 );
                 window.localStorage.setItem(
                     "bookAuthor",
-                    biographyBooks[i].author
+                    biographyBooks[i].authorName
                 );
                 window.localStorage.setItem(
                     "bookImage",
-                    biographyBooks[i].image
+                    biographyBooks[i].imgUrl
                 );
                 window.localStorage.setItem(
                     "bookPublishedData",
