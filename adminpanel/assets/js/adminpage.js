@@ -32,15 +32,14 @@ document.querySelector(".aboutbutton").addEventListener("click", function () {
 
 
 
-const booksRef = ref(db, `/budaq1`);
+const booksRef = ref(db, `/joinus`);
 const tableBody = document.querySelector('#join-tbody')
 onValue(booksRef, (snapshot) => {
 
     const bookData = snapshot.val();
-    const address = bookData.Address;
-    const email = bookData.Email;
-    const fullname = bookData.FullName;
-    const number = bookData.Number
+    const address = bookData.title;
+    const email = bookData.email;
+
 
     // const table = document.createElement('table')
     tableBody.innerHTML = `
@@ -50,10 +49,10 @@ onValue(booksRef, (snapshot) => {
         <th>${email}</th>
     </tr>
 `
-// tableBody.append(table)    
-        //     <table>
-        // </table>
-            
+    // tableBody.append(table)    
+    //     <table>
+    // </table>
+
 
 });
 
@@ -61,56 +60,59 @@ onValue(booksRef, (snapshot) => {
 onValue(booksRef, (snapshot) => {
 
     const bookData = snapshot.val();
-    const address = bookData.Address;
-    const email = bookData.Email;
-    const fullname = bookData.FullName;
-    const number = bookData.Number
+    const address = bookData.title;
+    const email = bookData.email;
+
 
     // const table = document.createElement('table')
     tableBody.innerHTML = `
     <tr>
         <th>1   </th>
-        <th>${fullname}</th>
+        <th>${address}</th>
         <th>${email}</th>
     </tr>
 `
-// tableBody.append(table)    
-        //     <table>
-        // </table>
-            
+    // tableBody.append(table)    
+    //     <table>
+    // </table>
+
 
 });
 
 
 const booksRef2 = ref(db, `/budaq1`);
 const tableBody2 = document.querySelector('#tbody')
-onValue(booksRef, (snapshot) => {
-
-    const bookData = snapshot.val();
+onValue(booksRef2, (snapshot2) => {
+    const bookData = snapshot2.val();
     const address = bookData.Address;
     const email = bookData.Email;
     const fullname = bookData.FullName;
     const number = bookData.Number
 
+
     // const table = document.createElement('table')
     tableBody2.innerHTML = `
     <tr>
         <th>1   </th>
+        <th>${fullname}</th>
         <th>${address}</th>
         <th>${email}</th>
+        <th>${number}</th>
+
+        
     </tr>
 `
-// tableBody.append(table)    
-        //     <table>
-        // </table>
-            
+    // tableBody.append(table)    
+    //     <table>
+    // </table>
+
 
 });
 
 
-onValue(booksRef2, (snapshot) => {
+onValue(booksRef2, (snapshot2) => {
 
-    const bookData = snapshot.val();
+    const bookData = snapshot2.val();
     const address = bookData.Address;
     const email = bookData.Email;
     const fullname = bookData.FullName;
@@ -127,9 +129,12 @@ onValue(booksRef2, (snapshot) => {
         
     </tr>
 `
-// tableBody.append(table)    
-        //     <table>
-        // </table>
-            
+    // tableBody.append(table)    
+    //     <table>
+    // </table>
+
 
 });
+
+
+
