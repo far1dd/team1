@@ -1,5 +1,5 @@
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { ref, set, onValue,getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 import { db } from '../adminpanel/assets/js/firebase.js';
 
 
