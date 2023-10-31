@@ -60,7 +60,7 @@ onValue(bookDataRef, (snapshot) => {
                 <h4>${bookDatas.bookName}</h4>
                 <p>${bookDatas.authorName}</p>
                 <div class="btn-container">
-                    <button id="bookButton_${bookDatas[key].id}">Read more</button>
+                    <button id="bookButton_${bookDatas.id}">Read more</button>
                 </div>
             </div>
         `;
