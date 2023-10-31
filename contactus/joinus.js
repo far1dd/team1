@@ -1,6 +1,6 @@
 // Import the necessary Firebase libraries
 import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
-import { db } from "contactus/firebase.js";
+import { db } from "firebase.js";
 
 var button = document.querySelector(".join-button")
 var input2 = document.querySelector(".email")
